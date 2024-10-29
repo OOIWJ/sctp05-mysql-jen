@@ -1,18 +1,21 @@
 {{#extends "base"}}
+
+{{#block "title"}}Create New Customer{{/block}}
+
 {{#block "content"}}
 <h1>Add a New Customer</h1>
 <form method="POST">
     <div class="mb-3">
         <label>First Name</label>
-        <input type="text" class="form-control" name="first_name">
+        <input type="text" class="form-control" name="first_name" required>
     </div>
     <div class="mb-3">
         <label>Last Name</label>
-        <input type="text" class="form-control" name="last_name">
+        <input type="text" class="form-control" name="last_name" required>
     </div>
     <div class="mb-3">
         <label>Rating</label>
-        <input type="text" class="form-control" name="rating">
+        <input type="text" class="form-control" name="rating" required>
     </div>
     <div class="mb-3">
         <label>Company</label>
@@ -25,7 +28,7 @@
    
     <div class="mb-3">
         <label>Employees</label>
-        <select name="employee_id" class="form-control" multiple>
+        <select name="employee_id" class="form-control" multiple required>
             {{#each employees}}
             <option value="{{employee_id}}">{{first_name}} {{last_name}}</option>
             {{/each}}
